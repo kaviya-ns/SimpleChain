@@ -7,7 +7,7 @@ blockchain_dir='blockchain/'
 def hashGenerator(prev_block):
 	with open(blockchain_dir+prev_block,'rb')as f:
 		content=f.read()
-	return hashlib.md5(content).hexdigest()
+	return hashlib.sha256(content).hexdigest()
 
 def create_genesis_block():
     if not os.path.exists(blockchain_dir):
